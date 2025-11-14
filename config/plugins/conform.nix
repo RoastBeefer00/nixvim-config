@@ -14,6 +14,7 @@
     stylua
     gosimports
     gofumpt
+    prettier
     prettierd
     nixfmt
   ];

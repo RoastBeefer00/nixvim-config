@@ -230,9 +230,9 @@ in
     {
       mode = "n";
       key = "<C-f>";
-      action = "vim.lsp.buf.format";
+      action = "<cmd>silent !tmux neww '~/.local/scripts/tmux-sessionizer; tmux wait-for -S sessionizer-done' && tmux wait-for sessionizer-done && tmux select-window -t :.+<CR>";
       options = {
-        desc = "LSP format";
+        desc = "Launch tmux-sessionizer";
       };
     }
     {
