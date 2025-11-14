@@ -5,23 +5,25 @@
     ./autotag.nix
     ./blankline.nix
     ./conform.nix
-    ./lazygit.nix
-    ./gitsigns.nix
-    ./flash.nix
     ./diffview.nix
-    ./lazygit.nix
+    ./flash.nix
+    ./flutter-tools.nix
+    ./gitsigns.nix
     ./harpoon.nix
     ./hop.nix
+    ./lazygit.nix
+    ./lazygit.nix
     ./lsp.nix
     ./lualine.nix
     ./nvim-cmp.nix
     ./oil.nix
     ./rainbow-delimiters.nix
+    ./sidekick.nix
     ./smart-splits.nix
     ./sort.nix
     ./surround.nix
-    ./todo.nix
     ./telescope.nix
+    ./todo.nix
     ./treesitter.nix
   ];
 }
