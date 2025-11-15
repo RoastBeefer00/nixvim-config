@@ -388,7 +388,7 @@ in
     if vim.g.have_nerd_font then
       require('nvim-web-devicons').setup {}
     end
-    
+
     vim.api.nvim_set_hl(0, 'YankHighlight', { bg = '#89b4fa', fg = '#1e1e2e' })
   '';
 

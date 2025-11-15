@@ -1,9 +1,9 @@
 { ... }:
 {
-    plugins.nvim-autopairs = {
-      enable = true;
-      settings = {
-        event = "InsertEnter";
-      };
+  plugins.nvim-autopairs = {
+    enable = true;
+    settings = {
+      event = "InsertEnter";
     };
+  };
 }

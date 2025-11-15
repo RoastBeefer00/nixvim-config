@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-    extraPlugins = with pkgs.vimPlugins; [
-      flash-nvim
-    ];
+  extraPlugins = with pkgs.vimPlugins; [
+    flash-nvim
+  ];
 
-    extraConfigLua = builtins.readFile ./flash.lua;
+  extraConfigLua = builtins.readFile ./flash.lua;
 }

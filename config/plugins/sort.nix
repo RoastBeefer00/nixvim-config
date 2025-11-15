@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-    extraPlugins = with pkgs.vimPlugins; [ sort-nvim ];
+  extraPlugins = with pkgs.vimPlugins; [ sort-nvim ];
 
-    extraConfigLua = ''
-      require("sort").setup({})
-    '';
+  extraConfigLua = ''
+    require("sort").setup({})
+  '';
 }

@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-    extraPlugins = with pkgs.vimPlugins; [
-      harpoon2
-    ];
+  extraPlugins = with pkgs.vimPlugins; [
+    harpoon2
+  ];
 
-    extraConfigLua = builtins.readFile ./harpoon.lua;
+  extraConfigLua = builtins.readFile ./harpoon.lua;
 }

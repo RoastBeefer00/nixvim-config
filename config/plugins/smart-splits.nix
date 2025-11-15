@@ -1,6 +1,6 @@
 { ... }:
 {
-    plugins.smart-splits = {
-      enable = true;
-    };
+  plugins.smart-splits = {
+    enable = true;
+  };
 }
