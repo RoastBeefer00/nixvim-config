@@ -25,5 +25,6 @@
     ./telescope.nix
     ./todo.nix
     ./treesitter.nix
+    ./quicker.nix
   ];
 }

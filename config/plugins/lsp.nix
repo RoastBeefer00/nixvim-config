@@ -226,7 +226,19 @@
       yamlls = {
         enable = true;
       };
-
+      # scheme_langserver = {
+      #   enable = false;
+      #   extraOptions = {
+      #     cmd = [ "steel-language-server" ];
+      #     filetypes = [
+      #       "scheme"
+      #       "scm"
+      #     ];
+      #   };
+      # };
+      # scheme_langserver = {
+      #   enable = true;
+      # };
       lua_ls = {
         enable = true;
 
@@ -428,4 +440,21 @@
       end
     '';
   };
+  extraConfigLua = ''
+    local lspconfig = require('lspconfig')
+    local configs = require('lspconfig.configs')
+
+    -- Define the custom server if it doesn't exist
+    if not configs.scheme_langserver then
+      configs.scheme_langserver = {
+        default_config = {
+          cmd = { 'steel-language-server' },
+          filetypes = { 'scheme', 'scm' },
+          root_dir = lspconfig.util.root_pattern('.git'),
+        },
+      }
+    end
+
+    lspconfig.scheme_langserver.setup{}
+  '';
 }

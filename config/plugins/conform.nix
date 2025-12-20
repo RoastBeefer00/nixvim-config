@@ -17,6 +17,7 @@
     prettier
     prettierd
     nixfmt
+    templ
   ];
 
   # Autoformat
@@ -29,6 +30,15 @@
       #   lspFallback = true;
       #   timeoutMs = 500;
       # };
+      formatters = {
+        templ = {
+          command = "templ";
+          args = [
+            "fmt"
+            "."
+          ];
+        };
+      };
       formattersByFt = {
         lua = [ "stylua" ];
         # Conform can also run multiple formatters sequentially
@@ -53,6 +63,9 @@
             "prettierd"
             "prettier"
           ]
+        ];
+        templ = [
+          "templ"
         ];
       };
     };
