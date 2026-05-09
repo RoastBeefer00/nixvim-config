@@ -2,6 +2,7 @@
 {
   imports = [
     ./autopairs.nix
+    ./crates.nix
     ./autotag.nix
     ./blankline.nix
     ./conform.nix

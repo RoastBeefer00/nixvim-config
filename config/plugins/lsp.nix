@@ -11,6 +11,9 @@
   plugins.blink-cmp = {
     enable = true;
     settings = {
+      snippets = {
+        preset = "luasnip";
+      };
       completion = {
         documentation = {
           auto_show = true;
@@ -35,6 +38,7 @@
         };
       };
       keymap = {
+        preset = "default";
         "<Tab>" = [
           "snippet_forward"
           {
@@ -44,17 +48,16 @@
               end
             '';
           }
-          {
-            __raw = ''
-              function() -- if you are using Neovim's native inline completions
-                if vim.lsp.inline_completion then
-                  return vim.lsp.inline_completion.get()
-                end
-              end
-            '';
-          }
           "fallback"
         ];
+        "<S-Tab>" = [ "snippet_backward" "fallback" ];
+        "<CR>" = [ "accept" "fallback" ];
+        "<C-y>" = [ "accept" "fallback" ];
+        "<C-Space>" = [ "show" "show_documentation" "hide_documentation" ];
+        "<C-b>" = [ "scroll_documentation_up" "fallback" ];
+        "<C-f>" = [ "scroll_documentation_down" "fallback" ];
+        "<Up>" = [ "select_prev" "fallback" ];
+        "<Down>" = [ "select_next" "fallback" ];
       };
     };
   };
@@ -120,6 +123,8 @@
   plugins.lsp = {
     enable = true;
 
+    capabilities = "require('blink.cmp').get_lsp_capabilities(capabilities)";
+
     # Enable the following language servers
     #  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
     #
@@ -136,9 +141,11 @@
       bashls = {
         enable = true;
       };
-      copilot = {
-        enable = true;
-      };
+      # copilot LSP disabled — copilot-lua + blink-copilot handles completions
+      # enabling this creates inline completions that intercept <C-y>
+      # copilot = {
+      #   enable = true;
+      # };
       cssls = {
         enable = true;
       };
@@ -204,6 +211,11 @@
         enable = true;
         installCargo = false;
         installRustc = false;
+        settings = {
+          cargo = {
+            features = "all";
+          };
+        };
       };
       # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
       #
