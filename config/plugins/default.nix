@@ -11,9 +11,10 @@
     ./flutter-tools.nix
     ./gitsigns.nix
     ./harpoon.nix
-./lazygit.nix
+    ./lazygit.nix
     ./lsp.nix
     ./lualine.nix
+    ./noice.nix
     ./nvim-cmp.nix
     ./oil.nix
     ./rainbow-delimiters.nix
@@ -24,6 +25,7 @@
     ./telescope.nix
     ./todo.nix
     ./treesitter.nix
+    ./trouble.nix
     ./quicker.nix
   ];
 }
