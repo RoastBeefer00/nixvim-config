@@ -110,12 +110,7 @@ in
     hlsearch = true;
   };
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>pv";
-      action = "vim.cmd.Ex";
-    }
-    {
+{
       mode = "v";
       key = "J";
       action = ":m '>+1<CR>gv=gv";

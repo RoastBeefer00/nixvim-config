@@ -73,19 +73,9 @@
     enable = true;
   };
 
-  # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraplugins
-  extraPlugins = with pkgs.vimPlugins; [
-    # NOTE: This is how you would ad a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
-    # `neodev` configure Lua LSP for your Neovim config, runtime and plugins
-    # used for completion, annotations, and signatures of Neovim apis
-    neodev-nvim
-    # blink-copilot
-  ];
-
-  # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraconfigluapre
-  extraConfigLuaPre = ''
-    require('neodev').setup {}
-  '';
+  plugins.lazydev = {
+    enable = true;
+  };
 
   # https://nix-community.github.io/nixvim/NeovimOptions/autoGroups/index.html
   autoGroups = {
@@ -446,9 +436,7 @@
       --
       -- This may be unwanted, since they displace some of your code
       if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-        map('<leader>th', function()
-          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-        end, '[T]oggle Inlay [H]ints')
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       end
     '';
   };

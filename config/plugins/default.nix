@@ -11,9 +11,7 @@
     ./flutter-tools.nix
     ./gitsigns.nix
     ./harpoon.nix
-    ./hop.nix
-    ./lazygit.nix
-    ./lazygit.nix
+./lazygit.nix
     ./lsp.nix
     ./lualine.nix
     ./nvim-cmp.nix

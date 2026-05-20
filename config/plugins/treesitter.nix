@@ -17,12 +17,17 @@
       c
       css
       diff
+      go
       html
       javascript
+      json
       lua
       markdown
       nix
+      rust
       svelte
+      toml
+      tsx
       typescript
       vim
       vimdoc

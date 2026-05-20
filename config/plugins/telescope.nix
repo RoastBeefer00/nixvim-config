@@ -111,11 +111,11 @@
           desc = "[F]ind [R]esume";
         };
       };
-      "<leader>f" = {
+      "<leader>fo" = {
         mode = "n";
         action = "oldfiles";
         options = {
-          desc = "[F]ind Recent Files ('.' for repeat)";
+          desc = "[F]ind [O]ld/Recent Files ('.' for repeat)";
         };
       };
       "<leader><leader>" = {
