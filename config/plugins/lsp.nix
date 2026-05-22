@@ -70,7 +70,7 @@
   # Useful status updates for LSP.
   # https://nix-community.github.io/nixvim/plugins/fidget/index.html
   plugins.fidget = {
-    enable = true;
+    enable = false;
   };
 
   plugins.lazydev = {
@@ -196,16 +196,6 @@
       };
       pyright = {
         enable = true;
-      };
-      rust_analyzer = {
-        enable = true;
-        installCargo = false;
-        installRustc = false;
-        settings = {
-          cargo = {
-            features = "all";
-          };
-        };
       };
       # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
       #

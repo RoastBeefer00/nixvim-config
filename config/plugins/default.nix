@@ -27,5 +27,6 @@
     ./treesitter.nix
     ./trouble.nix
     ./quicker.nix
+    ./rustaceanvim.nix
   ];
 }
