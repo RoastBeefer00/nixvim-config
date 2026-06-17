@@ -426,7 +426,7 @@
       --
       -- This may be unwanted, since they displace some of your code
       if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+        vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
       end
     '';
   };
