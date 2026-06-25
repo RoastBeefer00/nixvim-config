@@ -426,10 +426,19 @@
       --
       -- This may be unwanted, since they displace some of your code
       if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-        vim.lsp.inlay_hint.enable(false, { bufnr = bufnr })
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       end
     '';
   };
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>ti";
+      action.__raw = "function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end";
+      options.desc = "Toggle [I]nlay Hints";
+    }
+  ];
+
   extraConfigLua = ''
     local lspconfig = require('lspconfig')
     local configs = require('lspconfig.configs')

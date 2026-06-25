@@ -28,6 +28,7 @@
     ./treesitter.nix
     ./trouble.nix
     ./quicker.nix
+    ./neotest.nix
     ./rustaceanvim.nix
   ];
 }

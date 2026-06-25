@@ -18,6 +18,7 @@
     prettierd
     nixfmt
     templ
+    rustfmt
   ];
 
   # Autoformat
@@ -48,6 +49,7 @@
           "gofumpt"
         ];
 
+        rust = [ "rustfmt" ];
         nix = [ "nixfmt" ];
         #
         # You can use a sublist to tell conform to run *until* a formatter
