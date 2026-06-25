@@ -12,6 +12,7 @@
     ./gitsigns.nix
     ./harpoon.nix
     ./lazygit.nix
+    ./markdown-preview.nix
     ./lsp.nix
     ./lualine.nix
     ./noice.nix
