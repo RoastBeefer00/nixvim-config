@@ -5,6 +5,7 @@
     settings = {
       browser = "chrome";
       auto_close = 1;
+      auto_start = 1;
     };
   };
   keymaps = [
