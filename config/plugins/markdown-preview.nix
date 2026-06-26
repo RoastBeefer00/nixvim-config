@@ -3,9 +3,8 @@
   plugins.markdown-preview = {
     enable = true;
     settings = {
-      browser = "chrome";
+      browser = "";
       auto_close = 1;
-      auto_start = 1;
     };
   };
   keymaps = [
