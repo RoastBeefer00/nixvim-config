@@ -1,5 +1,24 @@
 { ... }:
 {
+  # Vendor the herdr session backend; require("sidekick_herdr") resolves via runtimepath.
+  extraFiles."lua/sidekick_herdr.lua".source = ./sidekick_herdr.lua;
+
+  # When herdr is on PATH: register backend + switch mux to herdr.
+  # When herdr is absent: branch is skipped; sidekick uses the tmux default below.
+  extraConfigLua = ''
+    if vim.fn.executable("herdr") == 1 and vim.env.HERDR_ENV == "1" then
+      require("sidekick.cli.session").register("herdr", require("sidekick_herdr"))
+      -- sidekick.config validates backend via vim.schedule; queue our mutation
+      -- after that schedule so the validator sees "tmux" (passes), then we
+      -- switch to "herdr" before the first CLI open.
+      vim.schedule(function()
+        local config = require("sidekick.config")
+        config.cli.mux.backend = "herdr"
+        config.cli.mux.create = "window"
+      end)
+    end
+  '';
+
   plugins.copilot-lua = {
     enable = true;
     # Keep suggestions disabled to avoid conflicts with Sidekick
