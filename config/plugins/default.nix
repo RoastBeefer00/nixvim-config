@@ -24,6 +24,7 @@
     ./sort.nix
     ./surround.nix
     ./telescope.nix
+    ./tf.nix
     ./todo.nix
     ./treesitter.nix
     ./trouble.nix

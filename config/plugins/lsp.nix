@@ -50,14 +50,39 @@
           }
           "fallback"
         ];
-        "<S-Tab>" = [ "snippet_backward" "fallback" ];
-        "<CR>" = [ "accept" "fallback" ];
-        "<C-y>" = [ "accept" "fallback" ];
-        "<C-Space>" = [ "show" "show_documentation" "hide_documentation" ];
-        "<C-b>" = [ "scroll_documentation_up" "fallback" ];
-        "<C-f>" = [ "scroll_documentation_down" "fallback" ];
-        "<Up>" = [ "select_prev" "fallback" ];
-        "<Down>" = [ "select_next" "fallback" ];
+        "<S-Tab>" = [
+          "snippet_backward"
+          "fallback"
+        ];
+        "<CR>" = [
+          "accept"
+          "fallback"
+        ];
+        "<C-y>" = [
+          "accept"
+          "fallback"
+        ];
+        "<C-Space>" = [
+          "show"
+          "show_documentation"
+          "hide_documentation"
+        ];
+        "<C-b>" = [
+          "scroll_documentation_up"
+          "fallback"
+        ];
+        "<C-f>" = [
+          "scroll_documentation_down"
+          "fallback"
+        ];
+        "<Up>" = [
+          "select_prev"
+          "fallback"
+        ];
+        "<Down>" = [
+          "select_next"
+          "fallback"
+        ];
       };
     };
   };
@@ -216,6 +241,9 @@
         enable = true;
       };
       yamlls = {
+        enable = true;
+      };
+      helm_ls = {
         enable = true;
       };
       # scheme_langserver = {
@@ -440,6 +468,7 @@
   ];
 
   extraConfigLua = ''
+    vim.lsp.set_log_level("off")
     local lspconfig = require('lspconfig')
     local configs = require('lspconfig.configs')
 

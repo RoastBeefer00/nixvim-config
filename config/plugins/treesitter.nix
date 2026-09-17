@@ -5,6 +5,17 @@
   ...
 }:
 {
+  extraConfigLua = ''
+    vim.filetype.add({
+      pattern = {
+        ['.*/templates/.*%.ya?ml'] = 'helm',
+        ['.*/templates/.*%.tpl'] = 'helm',
+        ['.*/templates/.*%.txt'] = 'helm',
+        ['helmfile.*%.ya?ml'] = 'helm',
+      },
+    })
+  '';
+
   plugins.treesitter = {
     enable = true;
     
@@ -18,6 +29,8 @@
       css
       diff
       go
+      gotmpl
+      helm
       html
       javascript
       json
