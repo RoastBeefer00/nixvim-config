@@ -53,7 +53,7 @@
                   tree-sitter-rstml.nixvimModule
                 ];
               };
-              extraSpecialArgs = { };
+              extraSpecialArgs = { inherit inputs; };
             };
             nvim = nixvim'.makeNixvimWithModule nixvimModule;
           in

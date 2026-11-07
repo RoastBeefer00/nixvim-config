@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/roastbeefer/.claude/**)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(/nix/store/46d1sn7chc146krxxm3xvl05bp0s0sj5-rtk-0.40.0/bin/rtk init *)",
+      "Bash(rtk ls *)",
+      "Bash(rtk grep *)",
+      "Bash(rtk git *)",
+      "Bash(herdr tab *)",
+      "Bash(herdr agent *)",
+      "Bash(herdr pane *)",
+      "Bash(herdr terminal *)"
+    ]
+  }
+}

@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       lsp = {
+        progress.enabled = true;
         signature = {
           opts = {
             size = {
