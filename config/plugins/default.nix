@@ -31,5 +31,6 @@
     ./quicker.nix
     ./neotest.nix
     ./rustaceanvim.nix
+    ./theme-sync.nix
   ];
 }
