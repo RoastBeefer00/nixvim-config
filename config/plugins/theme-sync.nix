@@ -6,10 +6,6 @@
   extraPlugins = with pkgs.vimPlugins; [
     tokyonight-nvim
     rose-pine
-    gruvbox-nvim
-    kanagawa-nvim
-    nord-nvim
-    everforest
   ];
 
   extraConfigLuaPost = ''
